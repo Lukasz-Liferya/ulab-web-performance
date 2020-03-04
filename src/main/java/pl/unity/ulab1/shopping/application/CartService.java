@@ -4,6 +4,7 @@ import pl.unity.ulab1.shopping.domain.Cart;
 import pl.unity.ulab1.shopping.domain.CartID;
 import pl.unity.ulab1.shopping.domain.CartRepository;
 import pl.unity.ulab1.shopping.domain.ProductID;
+import pl.unity.ulab1.shopping.domain.exception.ProductLimitReachedException;
 
 /**
  * @author lsutula
@@ -11,6 +12,7 @@ import pl.unity.ulab1.shopping.domain.ProductID;
 public class CartService {
 
 	private CartRepository cartRepository;
+	private EventBus eventBus;
 
 	public Cart getCart(GetCartCommand command){
 		CartID cartID = new CartID(command.cartID());
@@ -21,6 +23,11 @@ public class CartService {
 		ProductID productID = new ProductID(command.productID());
 		CartID cartID = new CartID(command.cartID());
 		Cart cart = cartRepository.getCart(cartID);
-		cart.addProduct(productID, command.productQuantity());
+		try {
+			cart.addProduct(productID, command.productQuantity(), eventBus);
+		} catch (ProductLimitReachedException e) {
+			//TODO exception
+			e.printStackTrace();
+		}
 	}
 }

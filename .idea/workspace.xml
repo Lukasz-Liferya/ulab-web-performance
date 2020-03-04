@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="893ce9de-d9ee-489b-8dfb-62b87a484443" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/AddProductToCartCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/CartService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/GetCartCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/CartID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/CartRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductPrice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/EventBus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/event/CartCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/event/ProductAddedToCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/infrastructure/hibernate/HibernateCartRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/ui/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/EventBus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductQuantity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductQuantityLimit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/exception/ProductLimitReachedException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/EventBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/DomainEventBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/event/ProductAddedToCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/event/ProductAddedToCart.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +50,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="pl.unity.ulab1.shopping.application" />
+    <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pl.unity.ulab1.shopping.domain" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="pl.unity.ulab1.shopping.domain.exception" />
+      <recent name="pl.unity.ulab1.shopping.domain" />
+      <recent name="pl.unity.ulab1.shopping.application" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -89,18 +85,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="675" y="187" key="#com.intellij.ide.util.MemberChooser" timestamp="1583327482365">
+    <state x="675" y="187" width="388" height="645" key="#com.intellij.ide.util.MemberChooser" timestamp="1583328647646">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state x="675" y="187" key="#com.intellij.ide.util.MemberChooser/0.0.1739.939@0.0.1739.939" timestamp="1583327482365" />
+    <state x="675" y="187" width="388" height="645" key="#com.intellij.ide.util.MemberChooser/0.0.1739.939@0.0.1739.939" timestamp="1583328647646" />
     <state x="666" y="331" width="413" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583326818284">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
     <state x="666" y="331" width="413" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1739.939@0.0.1739.939" timestamp="1583326818284" />
-    <state width="499" height="288" key="javadoc.popup.new" timestamp="1583327490294">
+    <state x="513" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583328608020">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="499" height="288" key="javadoc.popup.new/0.0.1739.939@0.0.1739.939" timestamp="1583327490294" />
+    <state x="513" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1739.939@0.0.1739.939" timestamp="1583328608020" />
+    <state width="499" height="288" key="javadoc.popup.new" timestamp="1583328627211">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state width="499" height="288" key="javadoc.popup.new/0.0.1739.939@0.0.1739.939" timestamp="1583328627211" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
