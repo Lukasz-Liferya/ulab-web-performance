@@ -1,11 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="893ce9de-d9ee-489b-8dfb-62b87a484443" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/AddProductToCartCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/GetCartCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/CartID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/CartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductPrice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/EventBus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/event/CartCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/event/ProductAddedToCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/infrastructure/hibernate/HibernateCartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/ui/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeExplorer">
+    <option name="filters">
+      <list>
+        <LibraryFilter />
+      </list>
+    </option>
+    <option name="showMethodBody" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YfFFLiBwjFJ2iqEllAELXZ6Ctn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="pl.unity.ulab1.shopping.application" />
+      <recent name="pl.unity.ulab1.shopping.domain" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="893ce9de-d9ee-489b-8dfb-62b87a484443" name="Default Changelist" comment="" />
+      <created>1583325636406</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583325636406</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="675" y="187" key="#com.intellij.ide.util.MemberChooser" timestamp="1583327482365">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state x="675" y="187" key="#com.intellij.ide.util.MemberChooser/0.0.1739.939@0.0.1739.939" timestamp="1583327482365" />
+    <state x="666" y="331" width="413" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583326818284">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state x="666" y="331" width="413" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1739.939@0.0.1739.939" timestamp="1583326818284" />
+    <state width="499" height="288" key="javadoc.popup.new" timestamp="1583327490294">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state width="499" height="288" key="javadoc.popup.new/0.0.1739.939@0.0.1739.939" timestamp="1583327490294" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/CartID.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="atlassian-ide-plugin-workspace-issues">
+    <option name="view">
+      <JiraViewConfigurationBean>
+        <option name="viewFilterId" value="" />
+      </JiraViewConfigurationBean>
+    </option>
   </component>
 </project>
