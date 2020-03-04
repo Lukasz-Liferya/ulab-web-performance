@@ -10,6 +10,12 @@ public class AddProductToCartCommand {
 	private UUID productID;
 	private int productQuantity;
 
+	public AddProductToCartCommand(UUID cartID, UUID productID, int productQuantity) {
+		this.cartID = cartID;
+		this.productID = productID;
+		this.productQuantity = productQuantity;
+	}
+
 	public UUID cartID() {
 		return cartID;
 	}
