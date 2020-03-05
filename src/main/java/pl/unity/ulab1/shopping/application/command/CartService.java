@@ -1,7 +1,8 @@
 package pl.unity.ulab1.shopping.application.command;
 
-import java.beans.Transient;
 import java.util.Optional;
+
+import javax.transaction.Transactional;
 
 import pl.unity.ulab1.shopping.domain.Buyer;
 import pl.unity.ulab1.shopping.domain.Cart;
@@ -24,7 +25,7 @@ public class CartService {
 		return cartRepository.getCart(cartID);
 	}
 
-	@Transient
+	@Transactional
 	public void addProductToCart(AddProductToCartCommand command){
 		ProductID productID = new ProductID(command.productID());
 		CartID cartID = new CartID(command.cartID());

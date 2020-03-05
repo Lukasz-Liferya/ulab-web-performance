@@ -17,7 +17,8 @@ public class HibernateCartSaleReportProjection implements CartSaleReportProjecti
 		//TU wykonujemy dodatkowe operacje w stacku query
 		boolean discountRequired = isDiscountRequired(buyerID);
 		//Tu tworzymy encję
-		new CartSaleReport(buyerName,buyerSurname, products, discountRequired );
+		CartSaleReport cartSaleReport = new CartSaleReport(buyerName, buyerSurname, products, discountRequired);
+		repeository.save(cartSaleReport);
 	}
 
 	@Override

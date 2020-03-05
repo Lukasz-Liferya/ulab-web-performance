@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="893ce9de-d9ee-489b-8dfb-62b87a484443" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/query/CartDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/query/CartQueryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/query/view/CartSaleReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/query/view/CartSaleReportProjection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/query/view/ProductFromCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/infrastructure/hibernate/query/HibernateCartQueryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/infrastructure/hibernate/query/HibernateCartSaleReportProjection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/AddProductToCartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/command/AddProductToCartCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/command/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/EventBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/command/EventBus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/GetCartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/command/GetCartCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/infrastructure/hibernate/HibernateCartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/infrastructure/hibernate/command/HibernateCartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/ui/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/ui/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/command/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/command/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/command/EventBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/command/EventBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/infrastructure/hibernate/query/HibernateCartSaleReportProjection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/infrastructure/hibernate/query/HibernateCartSaleReportProjection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,9 +106,10 @@
       <screen x="0" y="0" width="1739" height="939" />
     </state>
     <state x="400" y="126" key="Maven.ArtifactSearchDialog/0.0.1739.939@0.0.1739.939" timestamp="1583329133741" />
-    <state width="476" height="288" key="javadoc.popup.new" timestamp="1583393634961">
-      <screen x="0" y="0" width="1739" height="939" />
+    <state width="476" height="288" key="javadoc.popup.new" timestamp="1583423608809">
+      <screen x="1920" y="0" width="1739" height="939" />
     </state>
+    <state width="476" height="288" key="javadoc.popup.new/0.0.1739.939/1920.0.1739.939@1920.0.1739.939" timestamp="1583423608809" />
     <state width="485" height="288" key="javadoc.popup.new/0.0.1739.939@0.0.1739.939" timestamp="1583348602701" />
     <state width="476" height="288" key="javadoc.popup.new/1920.-316.1739.939/0.0.1739.939@0.0.1739.939" timestamp="1583393634961" />
   </component>
