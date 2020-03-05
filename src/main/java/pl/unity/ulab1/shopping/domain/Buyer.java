@@ -10,16 +10,16 @@ import javax.persistence.Entity;
 @Entity
 public class Buyer {
 	private long  technicalID;
-	private UUID buisnessID;
+	private UUID businessID;
 	private String name;
 	private String surname;
 
 	public Buyer() {
 	}
 
-	public Buyer(long technicalID, UUID buisnessID, String name, String surname) {
+	public Buyer(long technicalID, UUID businessID, String name, String surname) {
 		this.technicalID = technicalID;
-		this.buisnessID = buisnessID;
+		this.businessID = businessID;
 		this.name = name;
 		this.surname = surname;
 	}

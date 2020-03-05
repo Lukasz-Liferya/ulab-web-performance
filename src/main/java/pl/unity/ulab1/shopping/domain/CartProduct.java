@@ -1,9 +1,12 @@
 package pl.unity.ulab1.shopping.domain;
 
+import javax.persistence.Entity;
+
 /**
  * @author lsutula
  */
-public class CartProduct {
+@Entity
+class CartProduct {
 	private ProductID productID;
 	private int quantity;
 

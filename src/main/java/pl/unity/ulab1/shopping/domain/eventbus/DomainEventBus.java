@@ -7,6 +7,8 @@ import pl.unity.ulab1.shopping.domain.eventbus.event.ProductAddedToCart;
  * @author lsutula
  */
 public interface DomainEventBus {
-	public void post(CartCreatedEvent cartCreatedEvent);
-	public void post(ProductAddedToCart productAddedToCart);
+
+	void post(CartCreatedEvent cartCreatedEvent);
+
+	void post(ProductAddedToCart productAddedToCart);
 }

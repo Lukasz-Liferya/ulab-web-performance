@@ -29,7 +29,7 @@ public class Cart {
 		if (this.productQuantityLimit.isLimitReached(productQuantity)){
 			throw new ProductLimitReachedException();
 		}
-		this.productQuantityLimit = productQuantityLimit.newProductQuantity(productQuantity);
+		this.productQuantityLimit = this.productQuantityLimit.newProductQuantity(productQuantity);
 		addProductToCart(productID, productQuantity);
 		eventBus.post(new ProductAddedToCart(productID, new ProductQuantity(productQuantity)));
 	}

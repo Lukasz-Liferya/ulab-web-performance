@@ -21,7 +21,7 @@ public class ProductQuantityLimit {
 	}
 
 	public ProductQuantityLimit newProductQuantity(int quantity){
-		return new ProductQuantityLimit(this.actualProductQuantity + quantity, DEFAULT_QUANTITY_LIMIT);
+		return new ProductQuantityLimit(this.actualProductQuantity + quantity, limit);
 	}
 
 	public boolean isLimitReached(int productQuantity) {
