@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="893ce9de-d9ee-489b-8dfb-62b87a484443" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Buyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Buyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/CartProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/CartProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductQuantityLimit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/ProductQuantityLimit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/DomainEventBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/domain/eventbus/DomainEventBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/application/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/ui/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/unity/ulab1/shopping/ui/CartController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,10 +99,10 @@
       <screen x="0" y="0" width="1739" height="939" />
     </state>
     <state x="400" y="126" key="Maven.ArtifactSearchDialog/0.0.1739.939@0.0.1739.939" timestamp="1583329133741" />
-    <state width="485" height="288" key="javadoc.popup.new" timestamp="1583421788667">
+    <state width="485" height="288" key="javadoc.popup.new" timestamp="1583422691826">
       <screen x="1920" y="0" width="1739" height="939" />
     </state>
-    <state width="485" height="288" key="javadoc.popup.new/0.0.1739.939/1920.0.1739.939@1920.0.1739.939" timestamp="1583421788667" />
+    <state width="485" height="288" key="javadoc.popup.new/0.0.1739.939/1920.0.1739.939@1920.0.1739.939" timestamp="1583422691826" />
     <state width="485" height="288" key="javadoc.popup.new/0.0.1739.939@0.0.1739.939" timestamp="1583348602701" />
   </component>
   <component name="XDebuggerManager">

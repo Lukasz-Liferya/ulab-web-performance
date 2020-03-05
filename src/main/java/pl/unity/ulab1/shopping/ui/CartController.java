@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import pl.unity.ulab1.shopping.application.AddProductToCartCommand;
 import pl.unity.ulab1.shopping.application.CartService;
+import pl.unity.ulab1.shopping.domain.exception.ProductLimitReachedException;
 
 /**
  * @author lsutula
@@ -27,7 +28,11 @@ public class CartController {
 	public ResponseEntity<String> addProduct(UUID cartID, UUID productID, int productQuantity){
 
 		AddProductToCartCommand addProductToCartCommand = new AddProductToCartCommand(cartID, productID, productQuantity);
-		cartService.addProductToCart(addProductToCartCommand);
+		try {
+			cartService.addProductToCart(addProductToCartCommand);
+		} catch (ProductLimitReachedException e) {
+			e.printStackTrace();
+		}
 
 		//DLA UPROSZCZENIA
 		return new ResponseEntity<>("OK", HttpStatus.OK);
