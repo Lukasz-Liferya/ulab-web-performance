@@ -8,8 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import pl.unity.ulab1.shopping.application.AddProductToCartCommand;
-import pl.unity.ulab1.shopping.application.CartService;
+import pl.unity.ulab1.shopping.application.command.AddProductToCartCommand;
+import pl.unity.ulab1.shopping.application.command.CartService;
 
 /**
  * @author lsutula

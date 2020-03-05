@@ -1,4 +1,4 @@
-package pl.unity.ulab1.shopping.application;
+package pl.unity.ulab1.shopping.application.command;
 
 import java.beans.Transient;
 import java.util.Optional;
