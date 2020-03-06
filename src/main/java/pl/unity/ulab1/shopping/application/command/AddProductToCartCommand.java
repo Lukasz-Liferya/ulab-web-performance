@@ -9,11 +9,16 @@ public class AddProductToCartCommand {
 	private UUID cartID;
 	private UUID productID;
 	private int productQuantity;
+	private int snapshotVersion;
 
 	public AddProductToCartCommand(UUID cartID, UUID productID, int productQuantity) {
 		this.cartID = cartID;
 		this.productID = productID;
 		this.productQuantity = productQuantity;
+	}
+
+	public int snapshotVersion() {
+		return snapshotVersion;
 	}
 
 	public UUID cartID() {

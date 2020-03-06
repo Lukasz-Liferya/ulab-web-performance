@@ -7,12 +7,18 @@ import java.util.UUID;
  */
 public class GetCartCommand {
 	private UUID cartID;
+	private  int snapshotVersion;
 
 	public UUID cartID() {
 		return cartID;
 	}
 
+
 	public void setCartID(UUID cartID) {
 		this.cartID = cartID;
+	}
+
+	public int snapshotVersion() {
+		return snapshotVersion;
 	}
 }

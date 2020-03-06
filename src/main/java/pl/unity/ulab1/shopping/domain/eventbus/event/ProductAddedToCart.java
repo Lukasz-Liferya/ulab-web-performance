@@ -1,17 +1,24 @@
 package pl.unity.ulab1.shopping.domain.eventbus.event;
 
 import pl.unity.ulab1.shopping.domain.ProductID;
-import pl.unity.ulab1.shopping.domain.ProductQuantity;
 
 /**
  * @author lsutula
  */
 public class ProductAddedToCart {
 	private ProductID productID;
-	private ProductQuantity productQuantity;
+	private int productQuantity;
 
-	public ProductAddedToCart(ProductID productID, ProductQuantity productQuantity) {
+	public ProductAddedToCart(ProductID productID, int productQuantity) {
 		this.productID = productID;
 		this.productQuantity = productQuantity;
+	}
+
+	public ProductID productID() {
+		return productID;
+	}
+
+	public int productQuantity() {
+		return productQuantity;
 	}
 }

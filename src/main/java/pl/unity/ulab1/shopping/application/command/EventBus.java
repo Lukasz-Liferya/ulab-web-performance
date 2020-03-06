@@ -32,6 +32,6 @@ public class EventBus implements DomainEventBus {
 		//podpinamy stack Querry
 		//1. Możemy wzbogacić zasilanie query w tym miejscu
 		//2. Stack query może wzbogacać się sam
-		cartSaleReportProjection.update(null, null,null,null);
+		//cartSaleReportProjection.update(null, null,null,null);
 	}
 }
