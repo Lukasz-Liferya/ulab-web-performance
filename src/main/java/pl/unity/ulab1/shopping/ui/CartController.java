@@ -23,6 +23,7 @@ public class CartController {
 		this.cartService = cartService;
 	}
 
+
 	@RequestMapping(value = "/cart/addProduct", method = RequestMethod.POST)
 	public ResponseEntity<String> addProduct(UUID cartID, UUID productID, int productQuantity){
 

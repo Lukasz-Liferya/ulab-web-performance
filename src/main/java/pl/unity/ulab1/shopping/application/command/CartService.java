@@ -2,7 +2,8 @@ package pl.unity.ulab1.shopping.application.command;
 
 import java.util.Optional;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import pl.unity.ulab1.shopping.domain.Buyer;
 import pl.unity.ulab1.shopping.domain.Cart;
@@ -24,9 +25,21 @@ public class CartService {
 		CartID cartID = new CartID(command.cartID());
 		return cartRepository.getCart(cartID);
 	}
-
 	@Transactional
-	public void addProductToCart(AddProductToCartCommand command){
+	public void addProductToCart1(AddProductToCartCommand command) throws Exception {
+
+			//DB object -modify
+		for(){
+			addProductToCart(command);
+			if (i ==100) throw  new Exception();
+		}
+
+
+		throw  new Exception();
+	}
+
+	@Transactional(propagation = Propagation.)
+	private void addProductToCart(AddProductToCartCommand command){
 		ProductID productID = new ProductID(command.productID());
 		CartID cartID = new CartID(command.cartID());
 		//Koszyk może już istnieć lub nie
