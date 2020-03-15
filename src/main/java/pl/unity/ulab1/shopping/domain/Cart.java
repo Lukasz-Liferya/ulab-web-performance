@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import javax.persistence.Entity;
 
+import pl.unity.ulab1.shopping.domain.eventbus.event.CartCreatedEvent;
 import pl.unity.ulab1.shopping.domain.eventbus.event.ProductAddedToCart;
 import pl.unity.ulab1.shopping.domain.exception.ProductLimitReachedException;
 import pl.unity.ulab1.shopping.domain.sourcing.CartEvent;
@@ -24,30 +25,33 @@ public class Cart {
 	private List<CartEvent> changes;
 
 
-	public Cart(ProductQuantityLimit productQuantityLimit, Buyer buyer) {
-		this.productQuantityLimit = productQuantityLimit;
-		this.buyer = buyer;
-	}
-
 	public Cart(EventStream eventStream) {
-		for(CartEvent event:eventStream.cartEvents()){
+		for (CartEvent event : eventStream.cartEvents()) {
 			//TODO rzutowanie CartEventu na konkretnyTypEventu np. ProductAddedToCart
 			apply(null);
 		}
 	}
 
 	public void replayEvents(EventStream eventStream) {
-		for(CartEvent event:eventStream.cartEvents()){
+		for (CartEvent event : eventStream.cartEvents()) {
 			//TODO rzutowanie CartEventu na konkretnyTypEventu np. ProductAddedToCart
 			apply(null);
-		}}
+		}
+	}
 
+
+	private void apply(CartCreatedEvent cartCreatedEvent) {
+
+	}
 	private void apply(ProductAddedToCart productAddedToCart) {
 		try {
-			this.addProduct(productAddedToCart.productID(), productAddedToCart.productQuantity());
+			addProduct(productAddedToCart.productID(), productAddedToCart.productQuantity());
 		} catch (ProductLimitReachedException e) {
 			e.printStackTrace();
 		}
+	}
+	private void apply(CardOrderd cardOrderd) {
+
 	}
 
 	public void addProduct(ProductID productID, int productQuantity) throws ProductLimitReachedException {
@@ -56,7 +60,10 @@ public class Cart {
 		}
 		this.productQuantityLimit = productQuantityLimit.newProductQuantity(productQuantity);
 		addProductToCart(productID, productQuantity);
-		changes.add(new CartEvent(new ProductAddedToCart(productID, productQuantity)));
+		ProductAddedToCart productAddedToCart = new ProductAddedToCart(productID, productQuantity);
+
+		CartEvent cartEvent = new CartEvent(productAddedToCart);
+		changes.add(cartEvent);
 	}
 
 	private void addProductToCart(ProductID productID, int productQuantity){

@@ -7,6 +7,7 @@ import pl.unity.ulab1.shopping.domain.eventbus.event.ProductAddedToCart;
  */
 public class CartEvent {
 
+
 	public CartEvent(ProductAddedToCart productAddedToCart) {
 		//Generyczna persystencja eventu
 	}

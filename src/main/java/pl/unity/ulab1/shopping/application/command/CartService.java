@@ -28,6 +28,7 @@ public class CartService {
 		CartID cartID = new CartID(command.cartID());
 
 		Cart cartSnapshot = cartRepository.loadSnapshot(cartID, command.snapshotVersion());
+
 		EventStream eventStream;
 		if(cartSnapshot!=null){
 			eventStream = cartEventStore.loadEventStreamAfterVersion(cartID, cartSnapshot.snapshotVersion());
@@ -37,6 +38,7 @@ public class CartService {
 			cartSnapshot = new Cart(eventStream);
 		}
 		cartSnapshot.addProduct(new ProductID(command.productID()), command.productQuantity());
+
 		cartEventStore.appendToStream(cartID, eventStream.version(), cartSnapshot.changes());
 	}
 }
