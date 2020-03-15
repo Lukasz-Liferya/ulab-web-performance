@@ -1,4 +1,4 @@
-# ulab-web-applications-performance  
+# ulLAB #1 WEB Application Performance  
 
 Workshop - Web Application Performance uLAB #1
 
