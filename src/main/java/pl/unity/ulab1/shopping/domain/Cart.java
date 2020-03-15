@@ -27,6 +27,9 @@ public class Cart {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
 
+	private Cart() {
+	}
+
 	int snapshotVersion;
 	@Transient
 	private ProductQuantityLimit productQuantityLimit;
@@ -35,14 +38,17 @@ public class Cart {
 	@ManyToOne
 	private Buyer buyer;
 	@Transient
-	private List<CartEvent> changes;
+	private List<CartEvent> changes = new ArrayList<>();
 
 
 	public Cart(EventStream eventStream) {
-		for (CartEvent event : eventStream.cartEvents()) {
-			//TODO rzutowanie CartEventu na konkretnyTypEventu np. ProductAddedToCart
-			apply(new CartCreatedEvent());
-		}
+		Optional.ofNullable(eventStream).ifPresent(es -> {
+			for (CartEvent event : es.cartEvents()) {
+				//TODO rzutowanie CartEventu na konkretnyTypEventu np. ProductAddedToCart
+				apply(new CartCreatedEvent());
+			}
+		});
+		this.productQuantityLimit = ProductQuantityLimit.defaultLimit;
 	}
 
 	public void replayEvents(EventStream eventStream) {

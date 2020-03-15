@@ -49,7 +49,7 @@ public class CartService {
 			cartSnapshot = new Cart(eventStream);
 		}
 		cartSnapshot.addProduct(new ProductID(command.productID()), command.productQuantity());
-
-
+		eventStream.cartEvents().addAll(cartSnapshot.changes());
+		cartEventStore.save(eventStream);
 	}
 }

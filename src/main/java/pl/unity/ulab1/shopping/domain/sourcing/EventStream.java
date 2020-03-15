@@ -1,5 +1,6 @@
 package pl.unity.ulab1.shopping.domain.sourcing;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
@@ -28,8 +29,12 @@ public class EventStream {
 	private CartID cartID;
 
 	private int version;
+
 	@OneToMany
-	private List<CartEvent> cartEvents;
+	private List<CartEvent> cartEvents = new ArrayList<>();
+
+	private EventStream() {
+	}
 
 	public List<CartEvent> cartEvents() {
 		return cartEvents;

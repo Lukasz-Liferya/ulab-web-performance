@@ -17,6 +17,9 @@ public class CartEvent {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
 
+	private CartEvent() {
+	}
+
 	public CartEvent(ProductAddedToCart productAddedToCart) {
 		//Generyczna persystencja eventu
 	}
