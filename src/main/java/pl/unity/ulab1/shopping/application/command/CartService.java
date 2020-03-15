@@ -2,6 +2,8 @@ package pl.unity.ulab1.shopping.application.command;
 
 import javax.transaction.Transactional;
 
+import org.springframework.stereotype.Service;
+
 import pl.unity.ulab1.shopping.domain.Cart;
 import pl.unity.ulab1.shopping.domain.CartID;
 import pl.unity.ulab1.shopping.domain.CartRepository;
@@ -13,6 +15,7 @@ import pl.unity.ulab1.shopping.domain.sourcing.EventStream;
 /**
  * @author lsutula
  */
+@Service
 public class CartService {
 
 	private CartRepository cartRepository;

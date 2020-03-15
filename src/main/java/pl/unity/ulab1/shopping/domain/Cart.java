@@ -28,14 +28,14 @@ public class Cart {
 	public Cart(EventStream eventStream) {
 		for (CartEvent event : eventStream.cartEvents()) {
 			//TODO rzutowanie CartEventu na konkretnyTypEventu np. ProductAddedToCart
-			apply(null);
+			apply(new CartCreatedEvent());
 		}
 	}
 
 	public void replayEvents(EventStream eventStream) {
 		for (CartEvent event : eventStream.cartEvents()) {
 			//TODO rzutowanie CartEventu na konkretnyTypEventu np. ProductAddedToCart
-			apply(null);
+			apply(new CartCreatedEvent());
 		}
 	}
 

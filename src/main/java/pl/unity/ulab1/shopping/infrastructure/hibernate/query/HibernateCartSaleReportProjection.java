@@ -3,6 +3,8 @@ package pl.unity.ulab1.shopping.infrastructure.hibernate.query;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.stereotype.Service;
+
 import pl.unity.ulab1.shopping.application.query.view.CartSaleReport;
 import pl.unity.ulab1.shopping.application.query.view.CartSaleReportProjection;
 import pl.unity.ulab1.shopping.application.query.view.ProductFromCart;
@@ -10,6 +12,7 @@ import pl.unity.ulab1.shopping.application.query.view.ProductFromCart;
 /**
  * @author lsutula
  */
+@Service
 public class HibernateCartSaleReportProjection implements CartSaleReportProjection {
 
 	@Override
@@ -18,7 +21,7 @@ public class HibernateCartSaleReportProjection implements CartSaleReportProjecti
 		boolean discountRequired = isDiscountRequired(buyerID);
 		//Tu tworzymy encję
 		CartSaleReport cartSaleReport = new CartSaleReport(buyerName, buyerSurname, products, discountRequired);
-		repeository.save(cartSaleReport);
+		//repeository.save(cartSaleReport);
 	}
 
 	@Override
