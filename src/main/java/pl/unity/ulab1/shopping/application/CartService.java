@@ -3,6 +3,7 @@ package pl.unity.ulab1.shopping.application;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import pl.unity.ulab1.shopping.domain.Cart;
 import pl.unity.ulab1.shopping.domain.CartID;
@@ -14,6 +15,7 @@ import pl.unity.ulab1.shopping.domain.exception.ProductLimitReachedException;
 /**
  * @author lsutula
  */
+@Service
 public class CartService {
 
 	@Autowired

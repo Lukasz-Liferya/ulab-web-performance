@@ -5,8 +5,9 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import pl.unity.ulab1.shopping.application.AddProductToCartCommand;
 import pl.unity.ulab1.shopping.application.CartService;
@@ -14,7 +15,8 @@ import pl.unity.ulab1.shopping.domain.exception.ProductLimitReachedException;
 
 /**
  * @author lsutula
-	*/
+ */
+@Controller
 public class CartController {
 
 	private CartService cartService;
@@ -24,7 +26,12 @@ public class CartController {
 		this.cartService = cartService;
 	}
 
-	@RequestMapping(value = "/cart/addProduct", method = RequestMethod.POST)
+	@GetMapping(value = "/cart/products")
+	public ResponseEntity<String> getAllProducts(){
+		return new ResponseEntity<>("OK", HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/cart/addProduct")
 	public ResponseEntity<String> addProduct(UUID cartID, UUID productID, int productQuantity){
 
 		AddProductToCartCommand addProductToCartCommand = new AddProductToCartCommand(cartID, productID, productQuantity);
@@ -33,7 +40,6 @@ public class CartController {
 		} catch (ProductLimitReachedException e) {
 			e.printStackTrace();
 		}
-
 		//DLA UPROSZCZENIA
 		return new ResponseEntity<>("OK", HttpStatus.OK);
 	}
