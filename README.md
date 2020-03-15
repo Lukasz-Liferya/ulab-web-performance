@@ -11,3 +11,6 @@ There are a few cart methods you can try:
 * /cart/products - return all products for cartUid
 * /cart/add/product - for add new product to cart 
 
+
+H2 database url 
+* http://localhost:8080/h2-console
