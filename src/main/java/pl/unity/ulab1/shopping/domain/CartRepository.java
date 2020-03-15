@@ -5,4 +5,5 @@ package pl.unity.ulab1.shopping.domain;
  */
 public interface CartRepository {
 	Cart loadSnapshot(CartID cartID, int i);
+	Cart loadNewestSnapshot(CartID cartID);
 }

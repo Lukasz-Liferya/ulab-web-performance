@@ -25,4 +25,9 @@ public class HibernateCartRepository implements CartRepository {
 	public Cart loadSnapshot(CartID cartID, int i) {
 		return null;
 	}
+
+	@Override
+	public Cart loadNewestSnapshot(CartID cartID) {
+		return null;
+	}
 }

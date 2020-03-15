@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import pl.unity.ulab1.shopping.domain.eventbus.event.CartCreatedEvent;
 import pl.unity.ulab1.shopping.domain.eventbus.event.ProductAddedToCart;
@@ -18,10 +23,18 @@ import pl.unity.ulab1.shopping.domain.sourcing.EventStream;
 @Entity
 public class Cart {
 
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private Long id;
+
 	int snapshotVersion;
+	@Transient
 	private ProductQuantityLimit productQuantityLimit;
+	@Transient
 	private List<CartProduct> cartProducts = new ArrayList<>();
+	@ManyToOne
 	private Buyer buyer;
+	@Transient
 	private List<CartEvent> changes;
 
 

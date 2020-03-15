@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.unity.ulab1.shopping.application.command.AddProductToCartCommand;
 import pl.unity.ulab1.shopping.application.command.CartService;
@@ -32,7 +33,7 @@ public class CartController {
 	}
 
 	@PostMapping(value = "/cart/addProduct")
-	public ResponseEntity<String> addProduct(UUID cartID, UUID productID, int productQuantity){
+	public ResponseEntity<String> addProduct(@RequestParam UUID cartID, @RequestParam UUID productID, int productQuantity){
 
 		AddProductToCartCommand addProductToCartCommand = new AddProductToCartCommand(cartID, productID, productQuantity);
 		try {

@@ -1,9 +1,18 @@
 package pl.unity.ulab1.shopping.domain;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * @author lsutula
  */
 public class CartProduct {
+
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private Long id;
+
 	private ProductID productID;
 	private int quantity;
 

@@ -2,6 +2,7 @@ package pl.unity.ulab1.shopping.application.command;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pl.unity.ulab1.shopping.domain.Cart;
@@ -21,6 +22,12 @@ public class CartService {
 	private CartRepository cartRepository;
 	private CartEventStore cartEventStore;
 
+	@Autowired
+	public CartService(CartRepository cartRepository, CartEventStore cartEventStore) {
+		this.cartRepository = cartRepository;
+		this.cartEventStore = cartEventStore;
+	}
+
 	public Cart getCart(GetCartCommand command){
 		CartID cartID = new CartID(command.cartID());
 		return cartRepository.loadSnapshot(cartID, command.snapshotVersion());
@@ -33,6 +40,7 @@ public class CartService {
 		Cart cartSnapshot = cartRepository.loadSnapshot(cartID, command.snapshotVersion());
 
 		EventStream eventStream;
+
 		if(cartSnapshot!=null){
 			eventStream = cartEventStore.loadEventStreamAfterVersion(cartID, cartSnapshot.snapshotVersion());
 			cartSnapshot.replayEvents(eventStream);
@@ -42,6 +50,6 @@ public class CartService {
 		}
 		cartSnapshot.addProduct(new ProductID(command.productID()), command.productQuantity());
 
-		cartEventStore.appendToStream(cartID, eventStream.version(), cartSnapshot.changes());
+
 	}
 }

@@ -3,12 +3,18 @@ package pl.unity.ulab1.shopping.domain;
 import java.util.UUID;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * @author lsutula
  */
 @Entity
 public class Buyer {
+
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long  technicalID;
 	private UUID buisnessID;
 	private String name;

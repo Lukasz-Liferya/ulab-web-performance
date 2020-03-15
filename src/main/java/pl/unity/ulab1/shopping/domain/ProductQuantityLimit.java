@@ -5,7 +5,6 @@ package pl.unity.ulab1.shopping.domain;
  */
 public class ProductQuantityLimit {
 
-
 	public static final int DEFAULT_QUANTITY_LIMIT = 100;
 	private int actualProductQuantity = 0;
 	private int limit = 100;
