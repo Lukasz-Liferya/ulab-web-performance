@@ -2,7 +2,7 @@ package pl.unity.ulab1.shopping.application.command;
 
 import java.util.Optional;
 
-import org.springframework.transaction.annotation.Propagation;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pl.unity.ulab1.shopping.domain.Buyer;
@@ -16,6 +16,7 @@ import pl.unity.ulab1.shopping.domain.exception.ProductLimitReachedException;
 /**
  * @author lsutula
  */
+@Service
 public class CartService {
 
 	private CartRepository cartRepository;
@@ -29,17 +30,17 @@ public class CartService {
 	public void addProductToCart1(AddProductToCartCommand command) throws Exception {
 
 			//DB object -modify
-		for(){
+		////for(){
 			addProductToCart(command);
-			if (i ==100) throw  new Exception();
-		}
+			//if (i ==100) throw  new Exception();
+		//}
 
 
 		throw  new Exception();
 	}
 
-	@Transactional(propagation = Propagation.)
-	private void addProductToCart(AddProductToCartCommand command){
+	@Transactional
+	public void addProductToCart(AddProductToCartCommand command){
 		ProductID productID = new ProductID(command.productID());
 		CartID cartID = new CartID(command.cartID());
 		//Koszyk może już istnieć lub nie
