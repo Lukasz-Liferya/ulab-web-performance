@@ -1,4 +1,4 @@
-package pl.unity.lsutula.order.order;
+package pl.unity.ulab1.order.order;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
