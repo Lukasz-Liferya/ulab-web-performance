@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -30,10 +31,19 @@ public class EventStream {
 
 	private int version;
 
-	@OneToMany
+	@OneToMany(
+		cascade = CascadeType.ALL,
+		orphanRemoval = true
+	)
 	private List<CartEvent> cartEvents = new ArrayList<>();
 
 	private EventStream() {
+	}
+
+	public EventStream(CartID cartID, List<CartEvent> cartEvents) {
+		this.cartID = cartID;
+		this.version = 0;
+		this.cartEvents = cartEvents;
 	}
 
 	public List<CartEvent> cartEvents() {

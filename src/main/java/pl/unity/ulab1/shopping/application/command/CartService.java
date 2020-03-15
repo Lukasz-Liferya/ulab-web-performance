@@ -44,12 +44,20 @@ public class CartService {
 		if(cartSnapshot!=null){
 			eventStream = cartEventStore.loadEventStreamAfterVersion(cartID, cartSnapshot.snapshotVersion());
 			cartSnapshot.replayEvents(eventStream);
+			System.out.println("1111");
 		}else {
 			eventStream = cartEventStore.loadEventStream(cartID);
 			cartSnapshot = new Cart(eventStream);
+
 		}
+
 		cartSnapshot.addProduct(new ProductID(command.productID()), command.productQuantity());
-		eventStream.cartEvents().addAll(cartSnapshot.changes());
+
+		if(eventStream  == null) {
+			eventStream = new EventStream(cartID, cartSnapshot.changes());
+		}else{
+			eventStream.cartEvents().addAll(cartSnapshot.changes());
+		}
 		cartEventStore.save(eventStream);
 	}
 }

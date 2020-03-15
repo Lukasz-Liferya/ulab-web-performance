@@ -12,6 +12,9 @@ public class CartID {
 
 	private UUID value;
 
+	private CartID() {
+	}
+
 	public CartID(UUID value) {
 		this.value = value;
 	}

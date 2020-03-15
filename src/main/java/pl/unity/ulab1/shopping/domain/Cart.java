@@ -37,6 +37,7 @@ public class Cart {
 	private List<CartProduct> cartProducts = new ArrayList<>();
 	@ManyToOne
 	private Buyer buyer;
+
 	@Transient
 	private List<CartEvent> changes = new ArrayList<>();
 
