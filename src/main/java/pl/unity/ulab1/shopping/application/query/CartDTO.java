@@ -7,4 +7,8 @@ import java.util.UUID;
  */
 public class CartDTO {
 	private UUID cartID;
+
+	public CartDTO(UUID cartID) {
+		this.cartID = cartID;
+	}
 }

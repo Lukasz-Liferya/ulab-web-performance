@@ -1,5 +1,6 @@
 package pl.unity.ulab1.shopping.domain;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import javax.persistence.Embeddable;
@@ -8,7 +9,7 @@ import javax.persistence.Embeddable;
  * @author lsutula
  */
 @Embeddable
-public class CartID {
+public class CartID implements Serializable {
 
 	private UUID value;
 

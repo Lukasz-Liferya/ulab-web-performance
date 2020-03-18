@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
 import pl.unity.ulab1.shopping.domain.CartID;
 
@@ -25,11 +26,12 @@ public class EventStream {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
 
+	@Version
+	private Long version;
+
 	@Embedded
 	@AttributeOverride(name = "value", column = @Column(name = "cartID", nullable = false))
 	private CartID cartID;
-
-	private int version;
 
 	@OneToMany(
 		cascade = CascadeType.ALL,
@@ -42,7 +44,6 @@ public class EventStream {
 
 	public EventStream(CartID cartID, List<CartEvent> cartEvents) {
 		this.cartID = cartID;
-		this.version = 0;
 		this.cartEvents = cartEvents;
 	}
 
@@ -50,7 +51,17 @@ public class EventStream {
 		return cartEvents;
 	}
 
-	public int version() {
+	public Long version() {
 		return version;
+	}
+
+	@Override
+	public String toString() {
+		return "EventStream{" +
+			"id=" + id +
+			", version=" + version +
+			", cartID=" + cartID +
+			", cartEvents=" + cartEvents +
+			'}';
 	}
 }

@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.persistence.Version;
 
 import pl.unity.ulab1.shopping.domain.eventbus.event.CartCreatedEvent;
 import pl.unity.ulab1.shopping.domain.eventbus.event.ProductAddedToCart;
@@ -25,22 +28,28 @@ public class Cart {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	private Long id;
+	@AttributeOverride(name = "value", column = @Column(name = "id", nullable = false))
+	private CartID id;
 
-	private Cart() {
-	}
+	@Version
+	private int version;
 
 	int snapshotVersion;
+
 	@Transient
 	private ProductQuantityLimit productQuantityLimit;
+
 	@Transient
 	private List<CartProduct> cartProducts = new ArrayList<>();
+
 	@ManyToOne
 	private Buyer buyer;
 
 	@Transient
 	private List<CartEvent> changes = new ArrayList<>();
 
+	private Cart() {
+	}
 
 	public Cart(EventStream eventStream) {
 		Optional.ofNullable(eventStream).ifPresent(es -> {

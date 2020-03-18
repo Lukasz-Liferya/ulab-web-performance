@@ -25,6 +25,9 @@ public class CartSaleReport {
 	private List<ProductFromCart> products;
 	private boolean discount;
 
+	private CartSaleReport() {
+	}
+
 	public CartSaleReport(String buyerName, String buyerSurname, List<ProductFromCart> products, boolean discount) {
 		this.buyerName = buyerName;
 		this.buyerSurname = buyerSurname;
