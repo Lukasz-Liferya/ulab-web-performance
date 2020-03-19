@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import pl.unity.ulab1.shopping.application.command.AddProductToCartCommand;
 import pl.unity.ulab1.shopping.application.command.CartService;
@@ -38,7 +39,6 @@ public class CartController {
 	private CartEventStore cartEventStore;
 
 
-
 	@Autowired
 	public CartController(CartService cartService) {
 		this.cartService = cartService;
@@ -53,7 +53,11 @@ public class CartController {
 	@GetMapping(value = "/cart/alleventstreams")
 	public ResponseEntity<List<String>> getAllEventStreams() throws JsonProcessingException {
 		List<EventStream> eventStreams = cartEventStore.loadEventStreams();
+
 		ArrayList<String> streamsList = new ArrayList<>();
+		for (EventStream eventStream:eventStreams){
+			streamsList.add(new ObjectMapper().writeValueAsString(eventStream));
+		}
 		return new ResponseEntity<List<String>>(streamsList, HttpStatus.OK);
 	}
 

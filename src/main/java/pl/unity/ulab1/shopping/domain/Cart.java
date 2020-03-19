@@ -48,7 +48,14 @@ public class Cart {
 	@Transient
 	private List<CartEvent> changes = new ArrayList<>();
 
-	private Cart() {
+	private  Cart() {
+	}
+
+	public Cart(Buyer buyer) {
+		this.productQuantityLimit  = ProductQuantityLimit.defaultLimit;;
+		this.buyer = buyer;
+		snapshotVersion = 0;
+		changes.add(new CartEvent(new CartCreatedEvent(this.productQuantityLimit, this.buyer, snapshotVersion)));
 	}
 
 	public Cart(EventStream eventStream) {

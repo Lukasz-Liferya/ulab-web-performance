@@ -1,11 +1,14 @@
 package pl.unity.ulab1.shopping.domain.eventbus.event;
 
+import lombok.Getter;
 import pl.unity.ulab1.shopping.domain.ProductID;
 
 /**
  * @author lsutula
  */
+@Getter
 public class ProductAddedToCart {
+
 	private ProductID productID;
 	private int productQuantity;
 

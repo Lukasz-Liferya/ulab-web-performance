@@ -2,6 +2,8 @@ package pl.unity.ulab1.shopping.application.command;
 
 import java.util.UUID;
 
+import pl.unity.ulab1.shopping.domain.Buyer;
+
 /**
  * @author lsutula
  */
@@ -10,6 +12,7 @@ public class AddProductToCartCommand {
 	private UUID productID;
 	private int productQuantity;
 	private int snapshotVersion;
+	private Buyer buyer;
 
 	public AddProductToCartCommand(UUID cartID, UUID productID, int productQuantity, int snapshotVersion) {
 		this.cartID = cartID;
@@ -44,5 +47,9 @@ public class AddProductToCartCommand {
 
 	public void setProductQuantity(int productQuantity) {
 		this.productQuantity = productQuantity;
+	}
+
+	public Buyer buyer() {
+		return buyer;
 	}
 }

@@ -8,20 +8,22 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import lombok.Getter;
 import pl.unity.ulab1.shopping.domain.CartID;
 
 /**
  * @author lsutula
  */
 @Entity
+@Getter
 public class EventStream {
-
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
@@ -35,7 +37,8 @@ public class EventStream {
 
 	@OneToMany(
 		cascade = CascadeType.ALL,
-		orphanRemoval = true
+		orphanRemoval = true,
+		fetch = FetchType.EAGER
 	)
 	private List<CartEvent> cartEvents = new ArrayList<>();
 
@@ -49,19 +52,5 @@ public class EventStream {
 
 	public List<CartEvent> cartEvents() {
 		return cartEvents;
-	}
-
-	public Long version() {
-		return version;
-	}
-
-	@Override
-	public String toString() {
-		return "EventStream{" +
-			"id=" + id +
-			", version=" + version +
-			", cartID=" + cartID +
-			", cartEvents=" + cartEvents +
-			'}';
 	}
 }

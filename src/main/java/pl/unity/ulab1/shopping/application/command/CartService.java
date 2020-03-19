@@ -47,8 +47,11 @@ public class CartService {
 			System.out.println("1111");
 		}else {
 			eventStream = cartEventStore.loadEventStream(cartID);
-			cartSnapshot = new Cart(eventStream);
-
+			if(eventStream!=null){
+				cartSnapshot = new Cart(eventStream);
+			}else {
+				cartSnapshot = new Cart(command.buyer());
+			}
 		}
 
 		cartSnapshot.addProduct(new ProductID(command.productID()), command.productQuantity());

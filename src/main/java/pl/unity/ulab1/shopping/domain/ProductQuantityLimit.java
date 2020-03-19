@@ -1,8 +1,11 @@
 package pl.unity.ulab1.shopping.domain;
 
+import lombok.Getter;
+
 /**
  * @author lsutula
  */
+@Getter
 public class ProductQuantityLimit {
 
 	public static final int DEFAULT_QUANTITY_LIMIT = 100;

@@ -28,5 +28,5 @@ public interface CartEventStore extends JpaRepository<EventStream, Long> {
 	<S extends EventStream> S save(S s);
 
 	@Query("SELECT es FROM EventStream es")
-	List<EventStreamDTO> loadEventStreams();
+	List<EventStream> loadEventStreams();
 }
